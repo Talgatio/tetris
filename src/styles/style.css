@@ -1,0 +1,35 @@
+body {
+    display: block;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+}
+.red {
+    color: red;
+}
+.orange {
+    color: orange;
+}
+.yellow {
+    color: yellow;
+}
+.green {
+    color: green;
+}
+.aqua {
+    color: aqua;
+}
+.purple {
+    color: purple;
+}
+
+#element canvas {
+    border: 1px solid white;
+}
+
