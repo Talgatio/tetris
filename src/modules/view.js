@@ -25,16 +25,17 @@ export default class View {
     this.element.appendChild(this.canvas);
   }
 
-  render({ playfield }) {
+  render(state) {
     this.clearScreen();
-    this.renderPlayfield(playfield);
+    this.renderPlayfield(state);
+    this.renderPanel(state)
   }
 
   clearScreen() {
     this.context.clearRect(0, 0, this.width, this.height);
   }
 
-  renderPlayfield(playfield) {
+  renderPlayfield({playfield}) {
     for (let y = 0; y < playfield.length; y++) {
       const line = playfield[y];
 
@@ -46,6 +47,15 @@ export default class View {
         }
       }
     }
+  }
+
+  renderPanel({ level, score, lines, nextPieces }) {
+    this.context.textAlign = 'start';
+    this.context.textBaseline = 'top';
+    this.context.fillStyle = 'white';
+    this.context.font = '14px arial';
+
+    this.context.fillText(`Level: ${level}`, 0, 0);
   }
 
   renderBlock(x, y, width, height, color) {
